@@ -15,4 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+})->name('home');
+
+Route::livewire('/login', 'login')->layout('layouts.plain')->name('login');
+Route::livewire('/register', 'register')->layout('layouts.plain')->name('register');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::livewire('/dashboard', 'dashboard')->name('dashboard');
 });

@@ -11,9 +11,8 @@
   <script src="{{ mix('js/app.js') }}"></script>
 </head>
 
-<body>
+<body class="h-screen bg-gray-500">
 
-  <livewire:navbar />
   @yield('content')
 
   <livewire:scripts />

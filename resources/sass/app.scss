@@ -3,3 +3,44 @@
 @tailwind components;
 
 @tailwind utilities;
+
+// form classes
+.label {
+  @apply block text-gray-700 text-sm font-bold mb-2;
+}
+
+.text {
+  @apply shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+}
+
+.text:focus {
+  @apply outline-none shadow-outline;
+}
+
+.text.is-danger {
+  @apply border-red-500;
+}
+
+.help {
+  @apply text-sm italic mt-2;
+}
+
+.help.is-danger {
+  @apply text-red-500;
+}
+
+.button {
+  @apply  font-bold py-2 px-4 rounded;
+}
+
+.button.primary {
+  @apply bg-blue-500 text-white;
+}
+
+.button:hover {
+  @apply bg-blue-700;
+}
+
+.button:focus {
+  @apply outline-none shadow-outline
+}
