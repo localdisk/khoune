@@ -12,6 +12,20 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 class Navbar extends Component
 {
     /**
+     * logout.
+     *
+     * @return RedirectResponse
+     * @throws BindingResolutionException
+     * @throws RouteNotFoundException
+     */
+    public function logout()
+    {
+        auth()->logout();
+
+        return redirect()->route('login');
+    }
+
+    /**
      * go dashboard.
      *
      * @return RedirectResponse
