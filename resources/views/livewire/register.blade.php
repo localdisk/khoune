@@ -6,27 +6,27 @@
         <label class="label" for="username">
           Username
         </label>
-        <input class="text @error('name') is-danger @enderror" id="username" type="text" placeholder="username" wire:model.debounce.500ms="name">
+        <input class="text @error('name') danger @enderror" id="username" type="text" placeholder="username" wire:model.debounce.500ms="name">
         @error('name')
-          <p class="help is-danger">{{ $message }}</p>
+          <p class="help danger">{{ $message }}</p>
         @enderror
       </div>
       <div class="mb-4">
         <label class="label" for="email">
           Email Address
         </label>
-        <input class="text @error('email') is-danger @enderror" id="email" type="text" placeholder="email" wire:model.debounce.500ms="email">
+        <input class="text @error('email') danger @enderror" id="email" type="text" placeholder="email" wire:model.debounce.500ms="email">
         @error('email')
-          <p class="help is-danger">{{ $message }}</p>
+          <p class="help danger">{{ $message }}</p>
         @enderror
       </div>
       <div class="mb-4">
         <label class="label" for="password">
           Password
         </label>
-        <input class="text @error('password') is-danger @enderror" id="password" type="password" wire:model.debounce.500ms="password">
+        <input class="text @error('password') danger @enderror" id="password" type="password" wire:model.debounce.500ms="password">
         @error('password')
-          <p class="help is-danger">{{ $message }}</p>
+          <p class="help danger">{{ $message }}</p>
         @enderror
       </div>
       <div class="mb-6">

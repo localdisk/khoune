@@ -21,5 +21,7 @@ Route::livewire('/login', 'login')->layout('layouts.plain')->name('login');
 Route::livewire('/register', 'register')->layout('layouts.plain')->name('register');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::livewire('/dashboard', 'dashboard')->name('dashboard');
+    Route::livewire('/dashboard', 'dashboard')->layout('layouts.admin')->name('dashboard');
+    Route::livewire('/posts', 'post-list')->layout('layouts.admin')->name('posts.index');
+    Route::livewire('/posts/{post}/edit', 'post-list')->layout('layouts.admin')->name('posts.edit');
 });

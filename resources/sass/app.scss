@@ -17,7 +17,7 @@
   @apply outline-none shadow-outline;
 }
 
-.text.is-danger {
+.text.danger {
   @apply border-red-500;
 }
 
@@ -25,22 +25,27 @@
   @apply text-sm italic mt-2;
 }
 
-.help.is-danger {
+.help.danger {
   @apply text-red-500;
 }
 
 .button {
-  @apply  font-bold py-2 px-4 rounded;
-}
-
-.button.primary {
-  @apply bg-blue-500 text-white;
-}
-
-.button:hover {
-  @apply bg-blue-700;
+  @apply border py-2 px-4 bg-white shadow-lg text-gray-900
 }
 
 .button:focus {
   @apply outline-none shadow-outline
 }
+
+.button.danger {
+  @apply bg-red-500 text-white
+}
+
+.button.primary {
+  @apply bg-blue-500 text-white
+}
+
+.button.primary:hover {
+  @apply bg-blue-700;
+}
+
