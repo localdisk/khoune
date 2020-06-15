@@ -10,7 +10,6 @@
   @stack('styles')
   <livewire:scripts />
   <script src="{{ mix('js/app.js') }}"></script>
-  @stack('scripts')
 </head>
 
 <body class="bg-gray-100">
@@ -21,6 +20,7 @@
     @yield('content')
   </div>
 
+  @stack('scripts')
 </body>
 
 </html>

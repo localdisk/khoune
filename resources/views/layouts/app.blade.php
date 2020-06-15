@@ -8,6 +8,7 @@
   <livewire:styles />
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   @stack('styles')
+  <livewire:scripts />
   <script src="{{ mix('js/app.js') }}"></script>
 </head>
 
@@ -16,7 +17,6 @@
   <livewire:navbar />
   @yield('content')
 
-  <livewire:scripts />
   @stack('scripts')
 
 </body>

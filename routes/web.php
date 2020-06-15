@@ -23,5 +23,5 @@ Route::livewire('/register', 'register')->layout('layouts.plain')->name('registe
 Route::group(['middleware' => 'auth'], function () {
     Route::livewire('/dashboard', 'dashboard')->layout('layouts.admin')->name('dashboard');
     Route::livewire('/posts', 'post-list')->layout('layouts.admin')->name('posts.index');
-    Route::livewire('/posts/{post}/edit', 'post-list')->layout('layouts.admin')->name('posts.edit');
+    Route::livewire('/posts/create', 'create-post-form')->layout('layouts.admin')->name('posts.create');
 });

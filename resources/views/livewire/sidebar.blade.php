@@ -10,7 +10,7 @@
       <div class="bg-gray-700" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 transform scale-100" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-100">
         <ul>
           <li><a class="inline-block w-full text-white hover:bg-blue-500 cursor-pointer pl-10 py-2" wire:click="posts">List</a></li>
-          <li><a class="inline-block w-full text-white hover:bg-blue-500 cursor-pointer pl-10 py-2">New</a></li>
+          <li><a class="inline-block w-full text-white hover:bg-blue-500 cursor-pointer pl-10 py-2" wire:click="createPost">New</a></li>
         </ul>
       </div>
     </li>

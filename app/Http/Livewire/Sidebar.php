@@ -24,6 +24,18 @@ class Sidebar extends Component
     }
 
     /**
+     * create post.
+     *
+     * @return RedirectResponse
+     * @throws BindingResolutionException
+     * @throws RouteNotFoundException
+     */
+    public function createPost()
+    {
+        return redirect()->route('posts.create');
+    }
+
+    /**
      * render.
      *
      * @return View|Factory
