@@ -23,7 +23,7 @@
         <label class="label" for="body">
           Body
         </label>
-        <textarea name="body" id="body" cols="30" rows="10" class="text" placeholder="body"></textarea>
+        <textarea name="body" id="body" cols="30" rows="10" class="text" placeholder="body" wire:model="body"></textarea>
         @error('body')
           <p class="help danger">{{ $message }}</p>
         @enderror

@@ -6,7 +6,6 @@
     type="text"
     id="tagify"
     class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
-    value="A,B,C"
   >
 </div>
 
@@ -15,15 +14,24 @@
 @endpush
 
 @push('scripts')
-  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.11.1/dist/tagify.min.js" data-turbolinks-eval="false"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.11.1/dist/tagify.min.js"></script>
   <script>
-    let input = document.getElementById('tagify')
-    const tagify = new Tagify(input, {
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+    var input = document.getElementById('tagify')
+    var tagify = new Tagify(input, {
       whitelist : [
         @foreach($tags as $tag)
           '{{ $tag }}'@if(! $loop->last), @endif
         @endforeach
       ]
     })
+    input.addEventListener('change', onChange)
+
+    function onChange(e){
+      @this.call('changeTags', e.target.value)
+    }
+
+  })
   </script>
 @endpush
