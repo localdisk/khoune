@@ -1,8 +1,5 @@
-@if (session()->has('message'))
-  {{ session('message') }}
-@endif
 
-<div class="flex justify-center items-center w-full pt-32 mx-auto">
+<div class="flex justify-center items-center w-full mx-auto">
   <div class="w-full max-w-3xl">
     <form class="bg-white shadow-md rounded-md p-8" wire:submit.prevent="store">
       <h1 class="text-xl font-bold mb-4">Create Post Form</h1>

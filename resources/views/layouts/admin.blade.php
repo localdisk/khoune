@@ -17,7 +17,12 @@
   <livewire:navbar />
   <div class="flex">
     <livewire:sidebar>
-    @yield('content')
+    <div class="pt-32 mx-auto container">
+      @if (session()->has('message'))
+        {{ session('message') }}
+      @endif
+      @yield('content')
+    </div>
   </div>
 
   @stack('scripts')

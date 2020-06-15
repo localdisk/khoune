@@ -1,4 +1,4 @@
-<div class="pt-32 mx-auto container">
+<div>
   <table class="border-collapse w-full">
     <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-gray-700 border-gray-600">title</th>
     <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-gray-700 border-gray-600">body</th>
@@ -29,8 +29,10 @@
         {{ $post->updated_at->format('Y-m-d H:i:s') }}
       </td>
       <td class="py-4 px-6 border-gray-600 text-gray-900">
-        <button class="button">Edit</button>
-        <button class="button danger">delete</button>
+        <div class="flex">
+          <button class="button mr-3">Edit</button>
+          <button class="button danger" wire:click="delete({{ $post->id }})">delete</button>
+        </div>
       </td>
     </tr>
     @endforeach
