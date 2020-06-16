@@ -30,7 +30,7 @@
       </td>
       <td class="py-4 px-6 border-gray-600 text-gray-900">
         <div class="flex">
-          <button class="button mr-3">Edit</button>
+          <button class="button mr-3" wire:click="edit({{ $post->id }})">Edit</button>
           <button class="button danger" wire:click="delete({{ $post->id }})">delete</button>
         </div>
       </td>

@@ -7,18 +7,40 @@ use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
 use InvalidArgumentException;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class PostList extends Component
 {
     use WithPagination;
 
+    /**
+     * delete post.
+     *
+     * @param int $id
+     * @return RedirectResponse
+     * @throws BindingResolutionException
+     */
     public function delete(int $id)
     {
         Post::find($id)->delete();
 
         return redirect()->back();
+    }
+
+    /**
+     * redirect edit post form.
+     *
+     * @param int $id
+     * @return RedirectResponse
+     * @throws BindingResolutionException
+     * @throws RouteNotFoundException
+     */
+    public function edit(int $id)
+    {
+        return redirect()->route('posts.edit', $id);
     }
 
     /**

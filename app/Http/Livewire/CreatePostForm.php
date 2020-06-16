@@ -7,8 +7,11 @@ use App\Models\Tag;
 use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Throwable;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class CreatePostForm extends Component
 {
@@ -47,6 +50,13 @@ class CreatePostForm extends Component
         $this->tags = $tags;
     }
 
+    /**
+     * store post.
+     *
+     * @return RedirectResponse
+     * @throws Throwable
+     * @throws RouteNotFoundException
+     */
     public function store()
     {
         $validated = $this->validate([
