@@ -10,18 +10,18 @@ use Livewire\Component;
 
 class Tagify extends Component
 {
-    /** @var array */
-    public array $tags;
+    /** @var string */
+    public string $values;
 
     /**
      * mount.
      *
-     * @param array $tags
+     * @param array $values
      * @return void
      */
-    public function mount(?array $tags = []): void
+    public function mount(?array $values = []): void
     {
-        $this->tags = $tags;
+        $this->values = collect($values)->implode(',');
     }
 
     /**
@@ -48,10 +48,8 @@ class Tagify extends Component
      */
     public function render()
     {
-        $this->tags = $this->tags ?: Tag::all()->pluck('name')->toArray();
-
         return view('livewire.tagify', [
-            'tags' => $this->tags,
+            'tags' => Tag::all()->pluck('name')->toArray(),
         ]);
     }
 }

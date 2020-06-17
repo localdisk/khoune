@@ -52,7 +52,7 @@ class PostList extends Component
      */
     public function render()
     {
-        $posts = Post::with(['user', 'tags'])->paginate(5);
+        $posts = Post::with(['user', 'tags'])->oldest()->paginate(5);
 
         return view('livewire.post-list', ['posts' => $posts]);
     }
