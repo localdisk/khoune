@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Post;
 use App\Models\Tag;
-use App\Http\Livewire\Traits\Taggable as TraitsTaggable;
+use App\Http\Livewire\Traits\Taggable;
 use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class CreatePostForm extends Component
 {
-    use TraitsTaggable;
+    use Taggable;
 
     /** @var string */
     public string $title;

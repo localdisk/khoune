@@ -2,7 +2,7 @@
 <div class="flex justify-center items-center w-full mx-auto">
   <div class="w-full max-w-3xl">
     <form class="bg-white shadow-md rounded-md p-8" wire:submit.prevent="update">
-      <h1 class="text-xl font-bold mb-4">Create Post Form</h1>
+      <h1 class="text-xl font-bold mb-4">Edit Post Form</h1>
       {{-- title --}}
       <div class="mb-4">
         <label class="label" for="title">

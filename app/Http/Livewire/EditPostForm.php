@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Livewire\Traits\Taggable;
 use App\Models\Post;
 use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -10,6 +11,8 @@ use Livewire\Component;
 
 class EditPostForm extends Component
 {
+    use Taggable;
+
     /** @var Post */
     private Post $post;
 

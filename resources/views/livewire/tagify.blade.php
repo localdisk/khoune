@@ -5,6 +5,7 @@
   <input
     type="text"
     id="tagify"
+    autocomplete="off"
     class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
     wire:model="values"
   >
