@@ -4,9 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Http\Livewire\Traits\Taggable;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class EditPostForm extends Component
@@ -28,6 +30,12 @@ class EditPostForm extends Component
     /** @var array */
     public array $tags;
 
+    /** @var array */
+    // public array $initialTags = [];
+
+    // /** @var array */
+    protected $listeners = ['changeTags'];
+
     /**
      * mount.
      *
@@ -46,7 +54,26 @@ class EditPostForm extends Component
 
     public function update()
     {
-        dd($this->tags);
+        $validated = $this->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'tags' => 'array',
+        ]);
+
+        DB::transaction(function () use ($validated) {
+            $validated['user_id'] = auth()->user()->getAuthIdentifier();
+
+            $post = Post::find($this->postId);
+            $post->update($validated);
+
+            $tagIds = [];
+            foreach ($this->tags as $tag) {
+                $tagIds[] = Tag::firstOrCreate(['name' => $tag])->id;
+            }
+            $post->tags()->sync($tagIds);
+        });
+
+        return redirect()->route('posts.index');
     }
 
     /**

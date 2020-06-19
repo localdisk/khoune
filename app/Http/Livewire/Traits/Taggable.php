@@ -10,8 +10,9 @@ trait Taggable
      * @param array $tags
      * @return void
      */
-    public function changeTags(?array $tags = [])
+    public function changeTags(array $tags)
     {
+        // dump($tags, 'taggable');
         $this->tags = $tags;
     }
 }

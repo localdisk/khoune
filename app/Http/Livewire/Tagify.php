@@ -37,6 +37,8 @@ class Tagify extends Component
         }
         $changed = collect(json_decode($tags))->pluck('value')->toArray();
 
+        $this->values = $tags;
+        // dump($changed, 'tagify');
         $this->emitUp('changeTags', $changed);
     }
 
