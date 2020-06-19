@@ -25,7 +25,9 @@ class PostList extends Component
      */
     public function delete(int $id)
     {
-        Post::find($id)->delete();
+        $post = Post::find($id);
+        $post->tags()->detach();
+        $post->delete();
 
         return redirect()->back();
     }
