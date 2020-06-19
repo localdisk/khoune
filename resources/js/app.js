@@ -1,3 +1,3 @@
 require('./bootstrap');
-// let Turbolinks = require("turbolinks")
+// var Turbolinks = require("turbolinks")
 // Turbolinks.start()
