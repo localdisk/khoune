@@ -16,6 +16,9 @@ class EditPostForm extends Component
     /** @var Post */
     private Post $post;
 
+    /** @var int */
+    public int $postId;
+
     /** @var string */
     public string $title;
 
@@ -34,6 +37,7 @@ class EditPostForm extends Component
     public function mount(Post $post)
     {
         $this->post = $post;
+        $this->postId = $post->id;
 
         $this->title = $post->title;
         $this->body = $post->body;
@@ -54,7 +58,7 @@ class EditPostForm extends Component
     public function render()
     {
         return view('livewire.edit-post-form', [
-            'post' => $this->post,
+            'post' => Post::find($this->postId),
         ]);
     }
 }
