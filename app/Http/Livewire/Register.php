@@ -6,7 +6,10 @@ use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
+use Throwable;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class Register extends Component
 {
@@ -22,6 +25,14 @@ class Register extends Component
     /** @var string */
     public string $password_confirmation = '';
 
+    /**
+     * register.
+     *
+     * @return RedirectResponse
+     * @throws Throwable
+     * @throws BindingResolutionException
+     * @throws RouteNotFoundException
+     */
     public function register()
     {
         $validated = $this->validate([
@@ -34,7 +45,7 @@ class Register extends Component
 
         session()->flash('message', 'ユーザーを作成しました');
 
-        redirect()->route('login');
+        return redirect()->route('login');
     }
 
     /**
