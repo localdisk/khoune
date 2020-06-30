@@ -9,12 +9,11 @@
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   @stack('styles')
   <livewire:scripts />
-  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-100 w-full h-full">
 
-  <livewire:navbar />
   @yield('content')
 
   @stack('scripts')
