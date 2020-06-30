@@ -27,7 +27,7 @@
       </div>
       <div class="flex items-center justify-end">
         <button class="button primary" type="submit">
-          Create
+          Update
         </button>
       </div>
     </form>
