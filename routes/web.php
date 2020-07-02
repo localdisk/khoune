@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::livewire('/', 'home')->name('home');
+Route::livewire('/post/{post}', 'post')->name('post.show');
+Route::livewire('/tags/{tag:name}', 'tags')->name('tags');
 
 Route::livewire('/login', 'login')->layout('layouts.plain')->name('login');
 Route::livewire('/register', 'register')->layout('layouts.plain')->name('register');
